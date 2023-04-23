@@ -2,18 +2,6 @@
     <a href="#"> Food Explorer - API Restful</a>
 </h1>
 
-<p align="center">
-	
-  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=49AA26&labelColor=000000" alt="welcome!" />
-	
-  <img src="https://img.shields.io/github/languages/count/exodogurgel/food-explorer-backend" alt="languages" />
-	
-  <img alt="Github License" src="https://img.shields.io/github/license/exodogurgel/food-explorer-backend" />
-
-
-</p>
-
-
 <h4 align="center"> 
 	 Status: Finished
 </h4>
@@ -49,6 +37,7 @@ In this challenge, the following topics were addressed:
 - JWT;
 - Disk Storage;
 - Cors;
+
 ---
 
 ## ⚙️ Features
@@ -65,23 +54,25 @@ In this challenge, the following topics were addressed:
 - [x] Interesting to make the application responsive: use the concept of Mobile First that was learned in class.
 - [x] It's up to you where to apply animations, transitions, and transformations.
 - [x] It meets the model proposed in Figma and contains elements indicative of action and state.
-opcionais
+      opcionais
 - [x] The user can add items to the cart by clicking the add button. The amount is controlled by the “-” and “+” buttons;
 - [x] By clicking on the my order button, the user will be redirected to a screen where he will see his order, the sum and the payment methods;
 - [x] The user will be able to delete a dish from the cart and the total amount of the order should be updated automatically;
 - [x] The user can mark a dish as a favorite, just click on the heart that appears next to each one;
 - [x] The admin will view and control the status of each order, through a select field. Orders will appear in a table when you click Orders;
+
 ---
 
 ## 🚀 How it works
 
 This project is divided into three parts:
-1. Backend (food-explorer-backend folder) 
+
+1. Backend (food-explorer-backend folder)
 2. Frontend (food-explorer-frontend folder)
 
 ### Pre-requisites
-Before you begin, you will need to have the following tools installed on your machine: [Git] (https://git-scm.com), [Node.js] (https://nodejs.org/en/). In addition, it is good to have an editor to work with the code like [VSCode] (https://code.visualstudio.com/)
 
+Before you begin, you will need to have the following tools installed on your machine: [Git] (https://git-scm.com), [Node.js] (https://nodejs.org/en/). In addition, it is good to have an editor to work with the code like [VSCode] (https://code.visualstudio.com/)
 
 #### 🎲 Running the Server (Backend)
 
@@ -103,11 +94,13 @@ $ npm run dev
 
 # The Server will start at port: 3333 - go to http://localhost:3333
 ```
+
 ---
 
 ## 🛠 Tech Stack
 
 The following tools were used in the construction of the project:
+
 - [Express](https://expressjs.com/)
 - [CORS](https://expressjs.com/en/resources/middleware/cors.html)
 - [KnexJS](http://knexjs.org/)
@@ -117,9 +110,9 @@ The following tools were used in the construction of the project:
 
 ---
 
-## 💻  **Project** 
-The application that we will develop is a digital menu for a fictional restaurant, known as foodExplorer.
----
+## 💻 **Project**
+
+## The application that we will develop is a digital menu for a fictional restaurant, known as foodExplorer.
 
 ## 📝 License
 
