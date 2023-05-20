@@ -12,5 +12,4 @@ favoritesRoutes.get("/", favoritesController.index);
 favoritesRoutes.get("/:user_id", favoritesController.show);
 favoritesRoutes.delete("/:id", favoritesController.delete);
 
-
 module.exports = favoritesRoutes;

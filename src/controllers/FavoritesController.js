@@ -2,59 +2,61 @@ const knex = require("../database/knex");
 const AppError = require("../utils/AppError");
 
 class FavoritesController {
-  async create (request, response) {
-    const user_id  = request.user.id;
+  create = async (request, response) => {
+    const user_id = request.user.id;
     const { dish_id } = request.body;
 
     const verifyUser = await knex("users").where({ id: user_id }).first();
 
-    if(!verifyUser) {
+    if (!verifyUser) {
       throw new AppError("Usuário não encontrado.");
     }
 
     const [dish] = await knex("dishes").where({ id: dish_id });
 
-    if(!dish) {
-      throw new AppError("Este prato não existe.")
+    if (!dish) {
+      throw new AppError("Este prato não existe.");
     }
-    
+
     await knex("favorites").insert({
       dish_id: dish.id,
       user_id
-    })
+    });
 
-    return response.status(200).json();
-  }
+    response.status(200).json();
+  };
 
-  async index (request, response) {
+  index = async (request, response) => {
     const user_id = request.user.id;
 
     const favorites = await knex("favorites")
-    .innerJoin("dishes", "favorites.dish_id", "dishes.id")
-    .where("favorites.user_id", user_id)
-    .select("dishes.*").groupBy("dish_id");
+      .innerJoin("dishes", "favorites.dish_id", "dishes.id")
+      .where("favorites.user_id", user_id)
+      .select("dishes.*")
+      .groupBy("dish_id");
 
-    return response.json(favorites);
-  }
+    response.json(favorites);
+  };
 
-  async show (request, response) {
+  show = async (request, response) => {
     const user_id = request.user.id;
 
     const favorites = await knex("favorites")
-    .innerJoin("dishes", "favorites.dish_id", "dishes.id")
-    .where("favorites.user_id", user_id)
-    .select("dishes.*").groupBy("dish_id");
+      .innerJoin("dishes", "favorites.dish_id", "dishes.id")
+      .where("favorites.user_id", user_id)
+      .select("dishes.*")
+      .groupBy("dish_id");
 
-    return response.json(favorites);
-  }
+    response.json(favorites);
+  };
 
-  async delete (request, response) {
+  delete = async (request, response) => {
     const { id } = request.params;
 
     await knex("favorites").where({ dish_id: id }).delete();
 
-    return response.json();
-  }
+    response.json();
+  };
 }
 
-module.exports = FavoritesController;
+module.exports = new FavoritesController();

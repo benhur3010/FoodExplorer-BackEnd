@@ -9,7 +9,7 @@ describe("UserCreateService", () => {
   beforeEach(() => {
     userRepositoryInMemory = new UserRepositoryInMemory();
     userCreateService = new UserCreateService(userRepositoryInMemory);
-  })
+  });
 
   it("user should be create", async () => {
     const user = {
@@ -17,13 +17,11 @@ describe("UserCreateService", () => {
       email: "user@test.com",
       password: "123"
     };
-  
 
     const userCreated = await userCreateService.execute(user);
-  
+
     expect(userCreated).toHaveProperty("id");
   });
-  
 
   it("Verify in create user if email exists", async () => {
     const user1 = {
@@ -39,6 +37,8 @@ describe("UserCreateService", () => {
     };
 
     await userCreateService.execute(user1);
-    await expect(userCreateService.execute(user2)).rejects.toEqual(new AppError("Este email já está sendo usado", 401));
+    await expect(userCreateService.execute(user2)).rejects.toEqual(
+      new AppError("Este email já está em uso", 401)
+    );
   });
 });
