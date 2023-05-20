@@ -12,7 +12,7 @@ const sessionsRoutes = require("./sessions.routes");
 
 routes.use("/users", usersRoutes);
 routes.use("/dishes", dishesRoutes);
-routes.use("/favoritos", favoritesRoutes);
+routes.use("/favorites", favoritesRoutes);
 routes.use("/carrinho", requestsRoutes);
 routes.use("/category", categoryRoutes);
 routes.use("/items_requests", itemsRequestsRoutes);
