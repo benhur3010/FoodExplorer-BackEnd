@@ -10,6 +10,7 @@ const itemsRequestsRoutes = require("./items_requests.routes");
 
 const sessionsRoutes = require("./sessions.routes");
 
+
 routes.use("/users", usersRoutes);
 routes.use("/dishes", dishesRoutes);
 routes.use("/favoritos", favoritesRoutes);
@@ -20,3 +21,5 @@ routes.use("/items_requests", itemsRequestsRoutes);
 routes.use("/sessions", sessionsRoutes);
 
 module.exports = routes;
+
+

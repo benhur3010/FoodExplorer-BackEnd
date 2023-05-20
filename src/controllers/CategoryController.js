@@ -1,21 +1,21 @@
 const knex = require("../database/knex");
 
 class CategoryController {
-  create = async (request, response) => {
-    const { name } = request.body;
+    async create(request, response) {
+        const { name } = request.body;
 
-    await knex("category").insert({ name });
+        await knex("category").insert({ name });
 
-    response.json();
-  };
+        return response.json();
+    }
 
-  delete = async (request, response) => {
-    const { id } = request.params;
+    async delete(request, response) {
+        const { id } = request.params;
 
-    await knex("category").where({ id }).delete();
+        await knex("category").where({ id }).delete();
 
-    response.json();
-  };
+        return response.json();
+    }
 }
 
-module.exports = new CategoryController();
+module.exports = CategoryController;

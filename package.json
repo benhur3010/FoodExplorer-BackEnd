@@ -9,7 +9,7 @@
     "migrate": "knex migrate:latest",
     "test": "jest --watch"
   },
-  "author": "Ben-Hur Bueno",
+  "author": "Jackson dos Santos Moura",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
